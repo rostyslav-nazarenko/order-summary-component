@@ -1,0 +1,188 @@
+:root {
+  // Primary
+
+  --color-pale-blue: hsl(225, 100%, 94%);
+  --color-bright-blue: hsl(245, 75%, 52%);
+
+  // Neutral
+
+  --color-very-pale-blue: hsl(225, 100%, 98%);
+  --color-desaturated-blue: hsl(224, 23%, 55%);
+  --color-dark-blue: hsl(223, 47%, 23%);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  display: block;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  text-align: center;
+  color: var(--color-desaturated-blue);
+  background: var(--color-pale-blue)
+    url("../images/pattern-background-mobile.svg") no-repeat top / contain;
+
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+
+  @media screen and (min-width: 40rem) {
+    background-image: url("../images/pattern-background-desktop.svg");
+  }
+}
+
+footer p {
+  color: black;
+  font-size: 0.75rem;
+  margin: 1rem;
+  text-align: center;
+
+  a {
+    color: var(--color-bright-blue);
+  }
+}
+
+.card {
+  max-width: 20rem;
+  background-color: white;
+  border-radius: 1.5rem;
+  margin: 1rem;
+  overflow: hidden;
+
+  &__content {
+    padding: 1.5rem;
+  }
+
+  &__heading {
+    font-size: 1.375rem;
+    font-weight: 900;
+    margin-bottom: 0.75rem;
+    color: var(--color-dark-blue);
+  }
+
+  &__description {
+    margin-bottom: 1.5rem;
+  }
+
+  &__btn-submit {
+    font-weight: 700;
+    color: var(--color-very-pale-blue);
+    background-color: var(--color-bright-blue);
+    width: 100%;
+    border-radius: 0.625rem;
+    padding: 0.75rem;
+    margin-bottom: 1.125rem;
+
+    box-shadow: 0 1.125rem 1rem hsl(245, 75%, 90%);
+
+    &:hover {
+      background-color: hsl(245, 83%, 68%);
+      box-shadow: 0 1.125rem 1rem hsl(245, 75%, 92%);
+    }
+  }
+
+  &__btn-cancel {
+    color: var(--color-desaturated-blue);
+    font-weight: 900;
+    margin: 0 auto 0.25rem;
+
+    &:hover {
+      color: var(--color-dark-blue);
+    }
+  }
+}
+
+.price-option {
+  background-color: var(--color-very-pale-blue);
+  padding: 0.875rem;
+  border-radius: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+
+  &__information {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    color: var(--color-dark-blue);
+    font-weight: 900;
+    margin-bottom: -0.125rem;
+  }
+
+  &__link {
+    color: var(--color-bright-blue);
+    font-size: 0.875rem;
+    font-weight: 900;
+    display: block;
+    margin-left: auto;
+
+    &:hover {
+      color: hsl(245, 83%, 68%);
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (min-width: 31.125rem) {
+  .card {
+    max-width: 28.125rem;
+
+    &__content {
+      padding: 2.25rem 2.75rem;
+    }
+
+    &__heading {
+      font-size: 1.75rem;
+    }
+
+    &__btn-submit {
+      margin-bottom: 1.75rem;
+    }
+
+    &__btn-cancel {
+      margin-bottom: 0;
+    }
+  }
+
+  .price-option {
+    padding: 1.5rem;
+    margin-bottom: 1.75rem;
+    gap: 1.5rem;
+
+    &__name {
+      margin-bottom: 0;
+    }
+  }
+}
